@@ -1,0 +1,73 @@
+GET http://localhost:4000/user
+
+###
+POST http://localhost:4000/user 
+Content-Type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "root",
+    "confirm": "root",
+    "role": "admin"
+}
+
+###
+GET http://localhost:4000/user/b55535fb-43c5-4c8b-86cc-6c0c2e517ba6
+
+###
+PATCH http://localhost:4000/user/b55535fb-43c5-4c8b-86cc-6c0c2e517ba6
+Content-Type: application/json
+
+{
+    "name": "Taufiq updated",
+    "email": "htaufiq225@gmail.com",
+    "password": "malakaji",
+    "confirm": "malakaji",
+    "role": "admin"
+}
+
+###
+DELETE http://localhost:4000/user/7ac87829-22d6-40d5-9c26-24bbb7368810
+
+### portfolio
+GET http://localhost:4000/portfolio/e149d49c-5586-4646-a267-f7015b9b9133
+
+###
+POST http://localhost:4000/portfolio
+Content-Type: application/json
+
+{
+    "filename": "zoid.jpg",
+    "userId": 1
+}
+
+### 
+GET http://localhost:4000/portfolio/ff138ed1-8e34-4af8-9876-9bc41ad48a1d
+
+###
+PATCH http://localhost:4000/portfolio/ff138ed1-8e34-4af8-9876-9bc41ad48a1d
+Content-Type: application/json
+
+{
+    "filename": "apn.jpg",
+    "userId": 1
+}
+
+###
+DELETE http://localhost:4000/portfolio/51c2f68c-9324-45da-8893-a8e6106dde3e
+
+### login
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "root"
+}
+
+###
+GET http://localhost:4000/me
+
+###
+DELETE http://localhost:4000/logout
