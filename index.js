@@ -23,6 +23,13 @@ const store = new sessionStore({
 });
 
 app.use(express.static("public"));
+
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:3000",
+  })
+);
 app.use(
   session({
     secret: process.env.SECRET,
@@ -34,12 +41,7 @@ app.use(
     },
   })
 );
-app.use(
-  cors({
-    credentials: true,
-    origin: "http://localhost:3000",
-  })
-);
+
 app.use(express.json());
 app.use(FileUpload());
 app.use(authRoute);
