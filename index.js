@@ -22,14 +22,6 @@ const store = new sessionStore({
   db: db,
 });
 
-app.use(express.static("public"));
-
-app.use(
-  cors({
-    credentials: true,
-    origin: "http://localhost:3000",
-  })
-);
 app.use(
   session({
     secret: process.env.SECRET,
@@ -39,6 +31,15 @@ app.use(
     cookie: {
       secure: "auto",
     },
+  })
+);
+
+app.use(express.static("public"));
+
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:3000",
   })
 );
 
