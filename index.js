@@ -29,7 +29,7 @@ app.use(
     saveUninitialized: true,
     store: store,
     cookie: {
-      maxAge: 60000,
+      secure: "auto",
     },
   })
 );
