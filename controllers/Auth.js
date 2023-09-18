@@ -12,6 +12,7 @@ export const login = async (req, res) => {
   if (!match)
     return res.status(400).json({ msg: "password yang anda masukkan salah" });
   req.session.user = user.uuid;
+  req.session.save();
   const uuid = user.uuid;
   const email = user.email;
   const name = user.name;
