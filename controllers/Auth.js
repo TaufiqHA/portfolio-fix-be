@@ -10,6 +10,7 @@ export const login = async (req, res) => {
   if (!user) return res.status(404).json({ msg: "user tidak ditemukan" });
   if (await argon2.verify(user.password, req.body.password)) {
     req.session.user = user.uuid;
+    req.session.save();
   } else {
     return res
       .status(400)
